@@ -1,4 +1,5 @@
 ﻿using System;
+using Prototype.ExtendedPrototype;
 using Prototype.SimplePrototype;
 
 namespace Prototype
@@ -10,10 +11,22 @@ namespace Prototype
             Console.WriteLine("Prototype Pattern:");
 
             RunSimplePrototypeExample();
+            RunExtendedExample();
+        }
+
+        private static void RunExtendedExample()
+        {
+            Console.WriteLine("Extended example:");
+            var sensorOne = new Sensor(10, 5, "Sensor with mixed properties");
+            var sensorTwo = sensorOne.DeepClone();
+
+            Console.WriteLine(sensorOne);
+            Console.WriteLine(sensorTwo);
         }
 
         private static void RunSimplePrototypeExample()
         {
+            Console.WriteLine("Simple example:");
             var firstBook = new Book()
             {
                 Author = new Author()

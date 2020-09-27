@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Text.Json;
-using Prototype.SimplePrototype;
-
-namespace Prototype.ExtendedPrototype
+﻿namespace Prototype.ExtendedPrototype
 {
     public class Sensor : IDeepClone<Sensor>
     {
@@ -28,13 +22,12 @@ namespace Prototype.ExtendedPrototype
 
         public Sensor DeepClone()
         {
-            var serializedSensor = JsonSerializer.Serialize(this);
-            return JsonSerializer.Deserialize<Sensor>(serializedSensor);
+            return new Sensor(this._maxValue, this._minValue, this.Name);
         }
 
         public override string ToString()
         {
-            return $"{nameof(_maxValue)}: {_maxValue}, {nameof(_minValue)}: {_minValue}, {nameof(CurrentValue)}: {CurrentValue}, {nameof(Name)}: {Name}";
+            return $"HashCode: {this.GetHashCode()}, {nameof(_maxValue)}: {_maxValue}, {nameof(_minValue)}: {_minValue}, {nameof(CurrentValue)}: {CurrentValue}, {nameof(Name)}: {Name}";
         }
     }
 }
