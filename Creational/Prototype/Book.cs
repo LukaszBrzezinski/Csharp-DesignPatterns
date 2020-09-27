@@ -17,6 +17,11 @@ namespace Prototype
             var serializedBook = JsonSerializer.Serialize(obj);
             return JsonSerializer.Deserialize<Book>(serializedBook);
         }
+
+        public override string ToString()
+        {
+            return $"{nameof(Title)}: {Title}, {nameof(Author)}: {Author}, {nameof(ISBN)}: {ISBN}, {nameof(ReleaseDate)}: {ReleaseDate}";
+        }
     }
 
     public class Author
@@ -24,6 +29,11 @@ namespace Prototype
         public string Name { get; set; }
         public string Surname { get; set; }
         public DateTime BirthDate { get; set; }
+
+        public override string ToString()
+        {
+            return $"{nameof(Name)}: {Name}, {nameof(Surname)}: {Surname}, {nameof(BirthDate)}: {BirthDate}";
+        }
     }
 
 
