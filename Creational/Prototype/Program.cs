@@ -9,6 +9,11 @@ namespace Prototype
         {
             Console.WriteLine("Prototype Pattern:");
 
+            RunSimplePrototypeExample();
+        }
+
+        private static void RunSimplePrototypeExample()
+        {
             var firstBook = new Book()
             {
                 Author = new Author()
