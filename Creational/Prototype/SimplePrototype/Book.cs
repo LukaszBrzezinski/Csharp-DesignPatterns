@@ -19,7 +19,7 @@ namespace Prototype
 
         public override string ToString()
         {
-            return $"{nameof(Title)}: {Title}, {nameof(Author)}: {Author}, {nameof(ISBN)}: {ISBN}";
+            return $"hashCode: {this.GetHashCode()}, {nameof(Title)}: {Title}, {nameof(Author)}: {Author}, {nameof(ISBN)}: {ISBN}";
         }
     }
 
@@ -30,7 +30,7 @@ namespace Prototype
 
         public override string ToString()
         {
-            return $"{nameof(Name)}: {Name}, {nameof(Surname)}: {Surname}";
+            return $"hashCode: {this.GetHashCode()}, {nameof(Name)}: {Name}, {nameof(Surname)}: {Surname}";
         }
     }
 
