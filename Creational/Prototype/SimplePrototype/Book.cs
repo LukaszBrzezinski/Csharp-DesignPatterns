@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json;
 
-namespace Prototype
+namespace Prototype.SimplePrototype
 {
     public class Book : IDeepClone<Book>
     {
@@ -21,25 +17,5 @@ namespace Prototype
         {
             return $"hashCode: {this.GetHashCode()}, {nameof(Title)}: {Title}, {nameof(Author)}: {Author}, {nameof(ISBN)}: {ISBN}";
         }
-    }
-
-    public class Author
-    {
-        public string Name { get; set; }
-        public string Surname { get; set; }
-
-        public override string ToString()
-        {
-            return $"hashCode: {this.GetHashCode()}, {nameof(Name)}: {Name}, {nameof(Surname)}: {Surname}";
-        }
-    }
-
-
-    public interface IDeepClone<T> where T : class
-    {
-        /// <summary>
-        /// Creates deep copy of en object.
-        /// </summary>
-        T DeepClone ();
     }
 }

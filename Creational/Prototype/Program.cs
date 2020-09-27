@@ -1,4 +1,5 @@
 ﻿using System;
+using Prototype.SimplePrototype;
 
 namespace Prototype
 {
