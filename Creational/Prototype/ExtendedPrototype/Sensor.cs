@@ -31,5 +31,10 @@ namespace Prototype.ExtendedPrototype
             var serializedSensor = JsonSerializer.Serialize(this);
             return JsonSerializer.Deserialize<Sensor>(serializedSensor);
         }
+
+        public override string ToString()
+        {
+            return $"{nameof(_maxValue)}: {_maxValue}, {nameof(_minValue)}: {_minValue}, {nameof(CurrentValue)}: {CurrentValue}, {nameof(Name)}: {Name}";
+        }
     }
 }
