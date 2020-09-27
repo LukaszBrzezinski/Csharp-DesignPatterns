@@ -11,16 +11,15 @@ namespace Prototype
         public string Title { get; set; }
         public Author Author { get; set; }
         public string ISBN { get; set; }
-        public DateTime ReleaseDate { get; set; }
-        public Book DeepClone(Book obj)
+        public Book DeepClone()
         {
-            var serializedBook = JsonSerializer.Serialize(obj);
+            var serializedBook = JsonSerializer.Serialize(this);
             return JsonSerializer.Deserialize<Book>(serializedBook);
         }
 
         public override string ToString()
         {
-            return $"{nameof(Title)}: {Title}, {nameof(Author)}: {Author}, {nameof(ISBN)}: {ISBN}, {nameof(ReleaseDate)}: {ReleaseDate}";
+            return $"{nameof(Title)}: {Title}, {nameof(Author)}: {Author}, {nameof(ISBN)}: {ISBN}";
         }
     }
 
@@ -28,11 +27,10 @@ namespace Prototype
     {
         public string Name { get; set; }
         public string Surname { get; set; }
-        public DateTime BirthDate { get; set; }
 
         public override string ToString()
         {
-            return $"{nameof(Name)}: {Name}, {nameof(Surname)}: {Surname}, {nameof(BirthDate)}: {BirthDate}";
+            return $"{nameof(Name)}: {Name}, {nameof(Surname)}: {Surname}";
         }
     }
 
@@ -42,6 +40,6 @@ namespace Prototype
         /// <summary>
         /// Creates deep copy of en object.
         /// </summary>
-        T DeepClone (T obj);
+        T DeepClone ();
     }
 }
